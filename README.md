@@ -34,6 +34,7 @@ Se o dado existe ele traz do banco, senão busca remoto e salva no banco.
   - [ ] Outros ajustes para "produção"
   - [ ] Serializers?
   - [ ] SQLite3::BusyException: database is locked 
+  - [ ] Array de resultados no http://cep.la/00000-000/
 
 ## 4 Ruby version
 

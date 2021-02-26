@@ -21,6 +21,7 @@ class Address < ApplicationRecord
       res = JSON.parse(res.to_s, symbolize_names: true)
   
       puts res.to_s
+      # TODO: Tratar para res com mais de um resultado
   
       # TODO: tratar com format_cep?
       address.cep = res[:code] || res[:cep]
