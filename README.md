@@ -3,7 +3,7 @@
 Projeto feito em Ruby on Rails com banco em sqlite pra facilitar o deploy.
 
 Só rodar usando `rails s` após criar o banco `rails db:drop db:create db:migrate`
-Exemplo de consulta: http://127.0.0.1:3000/api/v1/adresses/87020-190
+Exemplo de consulta: http://127.0.0.1:3000/api/v1/addresses/87020-190
 
 A API é servida via banco, consumindo inicialmente via REST de um terceiro.
 Nesse momento não ha dado estruturado em tabelas pois o dado cru é mais rápido.
