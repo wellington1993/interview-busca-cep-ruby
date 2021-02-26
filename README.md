@@ -11,14 +11,16 @@ Se o dado existe ele traz do banco, senão busca remoto e salva no banco.
 
 ## 2 Pendências (TODO)
 
-- [ ] TESTES
-- [ ] Melhorar validações
-- [ ] Melhoras indices
 - [ ] Autenticação via Token
-- [ ] Múltiplos provedores de origem
-- [ ] Tabelas estruturadas alimentadas em segundo plano
-- [ ] Embutir trechos do código em threads e cache de fragmento
-- [ ] Outros ajustes para "produção"
+- [ ] Registar quem buscou quais ceps
+- [ ] TESTES
+- Outros
+  - [ ] Melhorar validações
+  - [ ] Melhoras indices
+  - [ ] Múltiplos provedores de origem
+  - [ ] Tabelas estruturadas alimentadas em segundo plano
+  - [ ] Embutir trechos do código em threads e cache de fragmento
+  - [ ] Outros ajustes para "produção"
 
 ## 3 Ruby version
 

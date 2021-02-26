@@ -60,12 +60,13 @@ class Api::V1::AdressesController < ApplicationController
           # TODO: Implementar busca em mais de um provedor
           # TODO: Busca em segundo plano usando threads
           # TODO: Busca simultanea em varios lugares
-          url = "https://viacep.com.br/ws/#{params[:cep]}/json"
+          # TODO: Salvar de onde veio o ceo salvo
+          url = "https://viacep.com.br/ws/#{zip_code}/json/unicode"
           puts url
           res = RestClient.get(url)
           res = JSON.parse(res.to_s)
           puts res.to_s
-          @adress.cep = res['cep']
+          @adress.cep = format_cep(res['cep'])
           @adress.bairro = res['bairro']
           @adress.logradouro = res['logradouro']
           @adress.complemento = res['complemento']
