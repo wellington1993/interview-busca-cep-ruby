@@ -41,7 +41,12 @@ class Api::V1::AdressesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_adress
-      @adress = Adress.find_by_cep(params[:cep])
+      zip_code = format_cep(params[:cep])
+      @adress = Adress.find_by_cep(zip_code)
+      puts params[:cep]
+      puts zip_code
+      puts @adress
+
       unless @adress
         # inicializa um novo usuario
         # pode ser util pra retornar em branco

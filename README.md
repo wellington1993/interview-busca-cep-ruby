@@ -1,4 +1,4 @@
-## Resumo (Introduction)
+## 1 Resumo (Introduction)
 
 Projeto feito em Ruby on Rails com banco em sqlite pra facilitar o deploy.
 
@@ -9,50 +9,52 @@ A API é servida via banco, consumindo inicialmente via REST de um terceiro.
 Nesse momento não ha dado estruturado em tabelas pois o dado cru é mais rápido.
 Se o dado existe ele traz do banco, senão busca remoto e salva no banco.
 
-## Pendências (TODO)
+## 2 Pendências (TODO)
 
 - [ ] TESTES
+- [ ] Melhorar validações
+- [ ] Melhoras indices
 - [ ] Autenticação via Token
 - [ ] Múltiplos provedores de origem
 - [ ] Tabelas estruturadas alimentadas em segundo plano
 - [ ] Embutir trechos do código em threads e cache de fragmento
 - [ ] Outros ajustes para "produção"
 
-## Ruby version
+## 3 Ruby version
 
 - ruby 2.7.2p137 (2020-10-01 revision 5445e04352) [x86_64-linux]
 - Rails 6.1.3
 
-## System dependencies
+## 4 System dependencies
 
 - rbenv
 - Ruby on Rails
 - Sqlite3 
 
-## Configuration
+## 5 Configuration
 
 - no for that time
 
-## Database creation
+## 6 Database creation
 
 - `rails db:create db:migrate`
 
-## Database initialization
+## 7 Database initialization
 
 - `rails db:seed`
 
-## How to run the test suite
+## 8 How to run the test suite
 
 - `rails test`
 
-## Services (job queues, cache servers, search engines, etc.)
+## 9 Services (job queues, cache servers, search engines, etc.)
 
 - not yet
 
-## Deployment instructions
+## 10 Deployment instructions
 
 - not yet
 
-## Acompanharmento
+## 11 Acompanharmento
 
 Favor, @latamgateway e @kimpastro acompanhar o progresso dessa API.
