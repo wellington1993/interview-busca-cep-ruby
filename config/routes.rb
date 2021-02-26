@@ -4,9 +4,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get '/adresses/:cep', to: 'adresses#show'
-      resources :adresses
+      get '/addresses/:cep', to: 'addresses#show'
+      resources :addresses
     end
   end
 end
-

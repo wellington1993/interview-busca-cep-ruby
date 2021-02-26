@@ -2,7 +2,7 @@
 
 Projeto feito em Ruby on Rails com banco em sqlite pra facilitar o deploy.
 
-Só rodar usando `rails s` após criar o banco `rails db:create db:migrate`
+Só rodar usando `rails s` após criar o banco `rails db:drop db:create db:migrate`
 Exemplo de consulta: http://127.0.0.1:3000/api/v1/adresses/87020-190
 
 A API é servida via banco, consumindo inicialmente via REST de um terceiro.
@@ -33,6 +33,7 @@ Se o dado existe ele traz do banco, senão busca remoto e salva no banco.
   - [ ] Embutir trechos do código em threads e cache de fragmento
   - [ ] Outros ajustes para "produção"
   - [ ] Serializers?
+  - [ ] SQLite3::BusyException: database is locked 
 
 ## 4 Ruby version
 
@@ -52,6 +53,7 @@ Se o dado existe ele traz do banco, senão busca remoto e salva no banco.
 ## 7 Database creation
 
 - `rails db:create db:migrate`
+- `rails db:drop db:create db:migrate RAILS_ENV=test`
 
 ## 8 Database initialization
 

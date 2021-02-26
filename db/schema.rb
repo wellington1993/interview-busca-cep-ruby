@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_26_100744) do
+ActiveRecord::Schema.define(version: 2021_02_26_140947) do
 
-  create_table "adresses", force: :cascade do |t|
+  create_table "addresses", force: :cascade do |t|
     t.string "cep"
     t.string "logradouro"
     t.string "complemento"
@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 2021_02_26_100744) do
     t.integer "gia"
     t.integer "ddd"
     t.integer "siafi"
+    t.boolean "erro"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "erro"
   end
 
   create_table "users", force: :cascade do |t|

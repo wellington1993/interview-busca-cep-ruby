@@ -1,6 +1,6 @@
-class CreateAdresses < ActiveRecord::Migration[6.1]
+class CreateAddresses < ActiveRecord::Migration[6.1]
   def change
-    create_table :adresses do |t|
+    create_table :addresses do |t|
       t.string :cep
       t.string :logradouro
       t.string :complemento
@@ -11,6 +11,7 @@ class CreateAdresses < ActiveRecord::Migration[6.1]
       t.integer :gia
       t.integer :ddd
       t.integer :siafi
+      t.boolean :erro
 
       t.timestamps
     end
