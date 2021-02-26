@@ -16,7 +16,7 @@ Se o dado existe ele traz do banco, senão busca remoto e salva no banco.
 - [x] Tratamento de CEP com e sem hifen
 - [x] Tratamento para CEP com erro, retorna erro=true
 - [x] Tratamento de CEPs sem logradouro, como CEPs de cidade pequena(Mandaguari)
-- [x] Cache de CEPs errados para evitar re-consulta externa
+- [ ] Cache de CEPs errados para evitar re-consulta externa
 - [x] Esquema de URL para versionamento da API
 
 ## 3 Pendências (TODO)

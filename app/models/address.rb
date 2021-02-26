@@ -12,10 +12,12 @@ class Address < ApplicationRecord
 
 
   def self.get_from_remote(cep,url)
+    puts '========================================='
     address = self.new
+    puts "GET em #{url}"
     begin
       require 'rest-client'
-      res = RestClient.get(url, :content_type => 'application/json')
+      res = RestClient.get(url, {content_type: :json, accept: :json})
       res = JSON.parse(res.to_s, symbolize_names: true)
   
       puts res.to_s
@@ -26,16 +28,21 @@ class Address < ApplicationRecord
       address.bairro = res[:bairro] || res[:district]
       address.logradouro = res[:logradouro] || res[:address]
       address.complemento = res[:complemento]
-      address.cidade = res[:localidade] || res[:city]
+      address.cidade = res[:localidade] || res[:city] || res[:cidade]
       address.uf = res[:uf] || res[:state]
       address.ibge = res[:ibge]
       address.gia = res[:gia]
       address.ddd = res[:ddd]
       address.siafi = res[:siafi]
-      address.erro = res[:erro] || !res[:ok]
-      address.cep = cep if address.erro
-      puts address
-      address.save
+      address.erro = res[:erro] || (res[:ok] == false)
+      puts "erro?: #{res[:erro]} ou #{res[:ok]}"
+      # TODO: Cache e tratamento de erro
+      if address.erro
+        puts address.to_s
+        address = nil
+      else
+        address.save
+      end
     rescue => e
       puts e.to_s
       address = nil
