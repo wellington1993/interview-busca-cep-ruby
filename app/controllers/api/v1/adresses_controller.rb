@@ -76,6 +76,8 @@ class Api::V1::AdressesController < ApplicationController
           @adress.gia = res['gia']
           @adress.ddd = res['ddd']
           @adress.siafi = res['siafi']
+          @adress.erro = res['erro']
+          @adress.cep = zip_code if @adress.erro
           @adress.save
         rescue => e
           puts e.to_s
