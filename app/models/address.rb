@@ -10,8 +10,7 @@ class Address < ApplicationRecord
     cep[0..4].to_s + '-' + cep[-3..-1].to_s
   end
 
-
-  def self.get_from_remote(cep,url)
+  def self.get_from_remote(cep,url,service_provider='')
     puts '========================================='
     address = self.new
     puts "GET em #{url}"
@@ -19,15 +18,22 @@ class Address < ApplicationRecord
       require 'rest-client'
       res = RestClient.get(url, {content_type: :json, accept: :json})
       res = JSON.parse(res.to_s, symbolize_names: true)
-  
-      puts res.to_s
+
+      if res.is_a? Array
+        puts res.to_s
+        res = res.first
+        multiplo_resultado = true
+      end
+
       # TODO: Tratar para res com mais de um resultado
   
       # TODO: tratar com format_cep?
-      address.cep = res[:code] || res[:cep]
+      address.cep = Address.format_cep(res[:code] || res[:cep])
 
-      address.bairro = res[:bairro] || res[:district]
-      address.logradouro = res[:logradouro] || res[:address]
+      address.service = res[:service] || service_provider
+
+      address.bairro = res[:bairro] || res[:district] || res[:neighborhood]
+      address.logradouro = res[:logradouro] || res[:address] || res[:street]
       address.complemento = res[:complemento]
       address.cidade = res[:localidade] || res[:city] || res[:cidade]
       address.uf = res[:uf] || res[:state]
@@ -42,7 +48,7 @@ class Address < ApplicationRecord
         puts address.to_s
         address = nil
       else
-        address.save
+        address.save unless multiplo_resultado
       end
     rescue => e
       puts e.to_s

@@ -49,11 +49,12 @@ class Api::V1::AddressesController < ApplicationController
       @address = Address.find_by_cep(zip_code)
 
       # TODO: Mais simples, funcionando
-      @address ||= Address.get_from_remote(zip_code, "https://ws.apicep.com/cep/#{zip_code}.json")
+      @address ||= Address.get_from_remote(zip_code, "https://ws.apicep.com/cep/#{zip_code}.json", 'apicep')
       # TODO: Me bloqueou apos teste de carga rs
-      @address ||= Address.get_from_remote(zip_code, "https://viacep.com.br/ws/#{zip_code}/json/unicode")
+      @address ||= Address.get_from_remote(zip_code, "https://viacep.com.br/ws/#{zip_code}/json/unicode", 'viacep')
       # TODO: Forcar JSON? Vindo em html
-      @address ||= Address.get_from_remote(zip_code, "http://cep.la/#{zip_code}/")
+      @address ||= Address.get_from_remote(zip_code, "https://brasilapi.com.br/api/cep/v1/#{zip_code}/", 'brasilapi')
+      @address ||= Address.get_from_remote(zip_code, "http://cep.la/#{zip_code}/", 'cepla')
       @address ||= Address.new(erro: true)
     end
 

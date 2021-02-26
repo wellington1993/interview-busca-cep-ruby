@@ -95,4 +95,8 @@ Favor, @latamgateway e @kimpastro acompanhar o progresso dessa API.
   - Códigos Ruby usando params CEP
 - [Gerador de CEP Válido](https://www.geradordecep.com.br/)
   - Gera CEPs bem excêntricos
+- Provedor de CEPs com arrays em CEPs mais complicados: http://cep.la/api
+  - Usando para suprir limites dos outros servicos
+- Alternativa para o viacep mas com limite pequeno de requests: https://apicep.com/
+- Adicionado o https://brasilapi.com.br/ como mais uma fonte de CEPs
 

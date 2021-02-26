@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_26_140947) do
+ActiveRecord::Schema.define(version: 2021_02_26_190257) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "cep"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_02_26_140947) do
     t.boolean "erro"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "service"
   end
 
   create_table "users", force: :cascade do |t|
