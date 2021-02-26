@@ -2,7 +2,7 @@
 
 Projeto feito em Ruby on Rails com banco em sqlite pra facilitar o deploy.
 
-Só rodar usando "rails s" após criar o banco "rails db:create db:migrate"
+Só rodar usando `rails s` após criar o banco `rails db:create db:migrate`
 Exemplo de consulta: http://127.0.0.1:3000/api/v1/adresses/87020190
 
 A API é servida via banco, consumindo inicialmente via REST de um terceiro.
@@ -11,12 +11,12 @@ Se o dado existe ele traz do banco, senão busca remoto e salva no banco.
 
 ## Pendências (TODO)
 
-- TESTES
-- Autenticação via Token
-- Múltiplos provedores de origem
-- Tabelas estruturadas alimentadas em segundo plano
-- Embutir trechos do código em threads e cache de fragmento
-- outros ajustes para "produção"
+- [ ] TESTES
+- [ ] Autenticação via Token
+- [ ] Múltiplos provedores de origem
+- [ ] Tabelas estruturadas alimentadas em segundo plano
+- [ ] Embutir trechos do código em threads e cache de fragmento
+- [ ] Outros ajustes para "produção"
 
 ## Ruby version
 
@@ -35,15 +35,15 @@ Se o dado existe ele traz do banco, senão busca remoto e salva no banco.
 
 ## Database creation
 
-- rails db:create db:migrate
+- `rails db:create db:migrate`
 
 ## Database initialization
 
-- rails db:seed
+- `rails db:seed`
 
 ## How to run the test suite
 
-- rails test
+- `rails test`
 
 ## Services (job queues, cache servers, search engines, etc.)
 
@@ -52,3 +52,7 @@ Se o dado existe ele traz do banco, senão busca remoto e salva no banco.
 ## Deployment instructions
 
 - not yet
+
+## Acompanharmento
+
+Favor, @latamgateway e @kimpastro acompanhar o progresso dessa API.
